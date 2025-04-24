@@ -38,15 +38,16 @@
     .main-title {
       font-size: 5.5rem;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem; /* Уменьшил отступ снизу */
       line-height: 1.1;
+      margin-top: -50px; /* Добавил отрицательный отступ сверху */
     }
 
     .main-subtitle {
       font-size: 1.2rem;
       font-weight: 300;
       color: var(--text-medium);
-      margin-bottom: 3rem;
+      margin-bottom: 2rem; /* Уменьшил отступ снизу */
     }
 
     /* Герой-секция с параллаксом */
@@ -65,6 +66,7 @@
       position: relative;
       z-index: 3;
       padding: 0 20px;
+      margin-top: -10%; /* Поднял весь блок контента выше */
     }
 
     .hero-image {
@@ -312,6 +314,7 @@
   </div>
 </section>
 
+<!-- Остальная часть кода без изменений -->
 <section id="workshops" class="section">
   <div class="container">
     <h2 class="section-title">Форматы мастер-классов</h2>
