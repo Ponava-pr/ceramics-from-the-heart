@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Potty — гончарная мастерская</title>
+  <title>Керамика от сердца</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ПОДКЛЮЧЕНИЕ ШРИФТОВ -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --beige: #F5E9DC;
-      --dark-beige: #E8D9C5;
-      --burgundy: #8B2E3D;
-      --light-gray: #E0E0E0;
-      --text-dark: #333333;
-      --text-medium: #555555;
+      --beige: #F5E9DC; /* основной бежевый фон */
+      --dark-beige: #E8D9C5; /* более тёмный бежевый */
+      --burgundy: #8B2E3D; /* бордово-красный для акцентов */
+      --light-gray: #E0E0E0; /* светло-серый */
+      --pastel-blue: #D6E3F8; /* пастельный голубой */
+      --pastel-pink: #F8D6E3; /* пастельный розовый */
+      --text-dark: #333333; /* тёмно-серый для текста */
+      --text-medium: #555555; /* средний серый */
     }
     
     body {
@@ -31,85 +34,9 @@
       color: var(--text-dark);
     }
 
-    .main-title {
-      font-size: 5.5rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-      line-height: 1.1;
-    }
-
-    .main-subtitle {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: var(--text-medium);
-      margin-bottom: 3rem;
-    }
-
-    .hero-section {
-      position: relative;
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background-color: var(--beige);
-      padding: 100px 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      padding: 0 20px;
-    }
-
-    .quote-section {
-      position: relative;
-      height: 60vh;
-      min-height: 400px;
-      margin-top: -10px;
-    }
-
-    .quote-image {
-      position: fixed;
-      top: 10px;
-      left: 0;
-      width: 100%;
-      height: calc(100% - 10px);
-      background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center;
-      background-size: cover;
-      z-index: 1;
-    }
-
-    .quote-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(245,233,220,0.3);
-      z-index: 2;
-    }
-
-    .hero-quote {
-      position: absolute;
-      bottom: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--burgundy);
-      padding: 0 20px;
-      z-index: 3;
-      font-style: italic;
-      transform: translateY(50%);
-    }
-
     .section {
       padding: 100px 0;
       position: relative;
-      background-color: var(--beige);
-      z-index: 4;
     }
 
     .section-title {
@@ -118,6 +45,27 @@
       text-align: center;
     }
 
+    /* Шапка */
+    header {
+      background-color: var(--dark-beige);
+      padding: 150px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 4.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    header .lead {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--text-medium);
+    }
+
+    /* Навигация */
     nav {
       background-color: var(--beige);
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
@@ -127,7 +75,7 @@
 
     .navbar-brand {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: var(--text-dark) !important;
     }
 
@@ -142,6 +90,7 @@
       color: var(--burgundy) !important;
     }
 
+    /* Кнопки */
     .btn-custom {
       background-color: var(--burgundy);
       color: white;
@@ -158,6 +107,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
+    /* Карточки мастер-классов */
     .card {
       border: none;
       border-radius: 12px;
@@ -192,6 +142,43 @@
       color: var(--text-medium);
     }
 
+    /* Параллакс секция */
+    .parallax-section {
+      height: 500px;
+      background: url('https://images.unsplash.com/photo-1584735422186-359a1c7a6d5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin: 100px 0;
+    }
+
+    .parallax-overlay {
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .parallax-content h2 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    /* Сертификат */
     .certificate-section {
       background-color: var(--light-gray);
       padding: 100px 0;
@@ -217,6 +204,7 @@
       text-align: center;
     }
 
+    /* Карта */
     .map-section {
       padding: 100px 0;
       background-color: var(--beige);
@@ -241,6 +229,7 @@
       font-size: 1.2rem;
     }
 
+    /* Разделитель */
     .divider {
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
@@ -253,7 +242,7 @@
 
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Potty.</a>
+    <a class="navbar-brand" href="#">Керамика от сердца</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -268,21 +257,12 @@
   </div>
 </nav>
 
-<section class="hero-section">
-  <div class="hero-content">
-    <h1 class="main-title">Potty.</h1>
-    <p class="main-subtitle">Гончарная мастерская с душой</p>
+<header>
+  <div class="container">
+    <h1>Керамика от сердца</h1>
+    <p class="lead">Творим с любовью, создаём с душой</p>
   </div>
-</section>
-
-<div class="quote-section">
-  <div class="quote-image"></div>
-  <div class="quote-overlay"></div>
-  <div class="hero-quote">
-    "Мараем руки — очищаем душу."<br>
-    В Potty мы формуем не только глину, но и моменты.
-  </div>
-</div>
+</header>
 
 <section id="workshops" class="section">
   <div class="container">
@@ -290,7 +270,7 @@
     <div class="row">
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="https://avatars.mds.yandex.net/get-altay/5517598/2a0000017e0ab5a5fe17f1f932605c89b39f/XXL_height" class="card-img-top" alt="Групповой мастер-класс">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Групповой мастер-класс">
           <div class="card-body">
             <h3 class="card-title">Групповой</h3>
             <p class="card-text">Мастер-класс в группе до 10 человек. Идеально для друзей и коллег.</p>
@@ -300,7 +280,7 @@
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" class="card-img-top" alt="Индивидуальный мастер-класс">
+          <img src="https://images.unsplash.com/photo-1584735422186-359a1c7a6d5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Индивидуальный мастер-класс">
           <div class="card-body">
             <h3 class="card-title">Индивидуальный</h3>
             <p class="card-text">Персональное занятие с мастером для углублённого изучения.</p>
@@ -310,7 +290,7 @@
       </div>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" class="card-img-top" alt="Мастер-класс на свидании">
+          <img src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Мастер-класс на свидании">
           <div class="card-body">
             <h3 class="card-title">Романтический</h3>
             <p class="card-text">Необычный формат свидания за гончарным кругом.</p>
@@ -321,6 +301,14 @@
     </div>
   </div>
 </section>
+
+<div class="parallax-section">
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content">
+    <h2>Подари незабываемые эмоции</h2>
+    <p class="lead">Создайте вместе что-то настоящее</p>
+  </div>
+</div>
 
 <section class="certificate-section">
   <div class="container">
