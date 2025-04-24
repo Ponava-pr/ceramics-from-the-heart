@@ -36,25 +36,24 @@
       letter-spacing: 2px;
       margin-bottom: 0.5rem;
       line-height: 1.1;
-      margin-top: -50px;
     }
 
     .main-subtitle {
       font-size: 1.2rem;
       font-weight: 300;
       color: var(--text-medium);
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     .hero-section {
       position: relative;
-      min-height: 40vh;
+      min-height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       background-color: var(--beige);
-      padding: 80px 0 40px;
+      padding: 80px 0;
     }
 
     .hero-content {
@@ -63,18 +62,11 @@
       padding: 0 20px;
     }
 
-    .quote-container {
+    .quote-section {
       position: relative;
-      padding: 60px 0 100px;
+      padding: 60px 20px;
       background-color: var(--beige);
-    }
-
-    .quote-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 2;
+      text-align: left;
     }
 
     .hero-quote {
@@ -82,74 +74,35 @@
       font-size: 1.8rem;
       color: var(--burgundy);
       font-style: italic;
-      text-align: left;
       line-height: 1.4;
-      margin-bottom: 30px;
-      padding-top: 20px;
-    }
-
-    .quote-image {
-      position: fixed;
-      top: 0;
-      left: 20%;
-      width: 60%;
-      height: 300px;
-      background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center;
-      background-size: cover;
-      z-index: 1;
-      margin-top: 100px;
-      opacity: 0.9;
-    }
-
-    .quote-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(245,233,220,0.9) 0%, rgba(245,233,220,0.7) 50%, rgba(245,233,220,0.9) 100%);
-      z-index: 1;
-    }
-
-    /* Остальные стили остаются без изменений */
-    .parallax-section {
-      height: 500px;
-      background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      margin: 100px 0;
-    }
-
-    .parallax-overlay {
-      background: rgba(0,0,0,0.4);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .parallax-content {
-      position: relative;
-      z-index: 2;
       max-width: 800px;
-      padding: 0 20px;
+      margin: 0 auto 40px;
     }
 
-    .parallax-content h2 {
-      font-size: 3.5rem;
-      margin-bottom: 2rem;
-      color: white;
+    .quote-parallax {
+      height: 60vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg');
+      position: relative;
     }
 
+    .quote-parallax-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(245,233,220,0.3);
+    }
+
+    /* Остальные стили */
     .section {
       padding: 100px 0;
       position: relative;
+      background-color: var(--beige);
     }
 
     .section-title {
@@ -230,6 +183,41 @@
 
     .card-text {
       color: var(--text-medium);
+    }
+
+    .parallax-section {
+      height: 500px;
+      background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin: 100px 0;
+    }
+
+    .parallax-overlay {
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .parallax-content h2 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      color: white;
     }
 
     .certificate-section {
@@ -315,15 +303,15 @@
   </div>
 </section>
 
-<div class="quote-container">
-  <div class="quote-image"></div>
-  <div class="quote-overlay"></div>
-  <div class="quote-content">
-    <div class="hero-quote">
-      "Мараем руки — очищаем душу."<br>
-      В Potty мы формуем не только глину, но и моменты.
-    </div>
+<section class="quote-section">
+  <div class="hero-quote">
+    "Мараем руки — очищаем душу."<br>
+    В Potty мы формуем не только глину, но и моменты.
   </div>
+</section>
+
+<div class="quote-parallax">
+  <div class="quote-parallax-overlay"></div>
 </div>
 
 <section id="workshops" class="section">
