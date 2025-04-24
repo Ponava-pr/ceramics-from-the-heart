@@ -62,31 +62,18 @@
       padding: 0 20px;
     }
 
-    .quote-section {
-      position: relative;
-      padding: 60px 20px;
-      background-color: var(--beige);
-      text-align: left;
-    }
-
-    .hero-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--burgundy);
-      font-style: italic;
-      line-height: 1.4;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-
     .quote-parallax {
-      height: 60vh;
+      height: 50vh;
+      min-height: 400px;
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       background-image: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg');
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .quote-parallax-overlay {
@@ -95,7 +82,24 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(245,233,220,0.3);
+      background: rgba(0,0,0,0.5);
+    }
+
+    .quote-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 20px;
     }
 
     /* Остальные стили */
@@ -199,7 +203,7 @@
     }
 
     .parallax-overlay {
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       position: absolute;
       top: 0;
       left: 0;
@@ -303,15 +307,14 @@
   </div>
 </section>
 
-<section class="quote-section">
-  <div class="hero-quote">
-    "Мараем руки — очищаем душу."<br>
-    В Potty мы формуем не только глину, но и моменты.
-  </div>
-</section>
-
 <div class="quote-parallax">
   <div class="quote-parallax-overlay"></div>
+  <div class="quote-content">
+    <div class="hero-quote">
+      "Мараем руки — очищаем душу."<br>
+      В Potty мы формуем не только глину, но и моменты.
+    </div>
+  </div>
 </div>
 
 <section id="workshops" class="section">
