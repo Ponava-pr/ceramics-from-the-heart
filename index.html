@@ -10,19 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --potters-clay: #8C6A56; /* Potter's Clay (КОНЧАРНАЯ ГЛИНСИ) */
-      --spicy-mustard: #D4A017; /* Spicy Mustard (КОСТРАЯ ГОРНИЦСИ) */
-      --aurora-red: #B33A3A; /* Aurora Red (КРАСНАЯ ЗАРЯ) */
-      --airy-blue: #A2C4D9; /* Airy blue (ВОЗДУШНЫЙ ГОЛУБОЙ) */
-      --aquatic-awe: #4B9EAA; /* Aquatic Awe (Какатический бирюзовый) */
-      --light-bg: #F5F5F5;
-      --text-color: #333333;
+      --beige: #F5E9DC; /* основной бежевый фон */
+      --dark-beige: #E8D9C5; /* более тёмный бежевый */
+      --burgundy: #8B2E3D; /* бордово-красный для акцентов */
+      --light-gray: #E0E0E0; /* светло-серый */
+      --pastel-blue: #D6E3F8; /* пастельный голубой */
+      --pastel-pink: #F8D6E3; /* пастельный розовый */
+      --text-dark: #333333; /* тёмно-серый для текста */
+      --text-medium: #555555; /* средний серый */
     }
     
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-color);
+      background-color: var(--beige);
+      color: var(--text-dark);
       scroll-behavior: smooth;
       line-height: 1.6;
     }
@@ -30,7 +31,7 @@
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      color: var(--potters-clay);
+      color: var(--text-dark);
     }
 
     .section {
@@ -46,7 +47,7 @@
 
     /* Шапка */
     header {
-      background-color: var(--airy-blue);
+      background-color: var(--dark-beige);
       padding: 150px 0 100px;
       text-align: center;
       position: relative;
@@ -56,42 +57,42 @@
     header h1 {
       font-size: 4.5rem;
       margin-bottom: 1.5rem;
-      color: var(--potters-clay);
     }
 
     header .lead {
       font-size: 1.5rem;
       font-weight: 300;
-      color: var(--aquatic-awe);
+      color: var(--text-medium);
     }
 
     /* Навигация */
     nav {
-      background-color: white;
+      background-color: var(--beige);
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
       padding: 15px 0;
+      border-bottom: 1px solid var(--light-gray);
     }
 
     .navbar-brand {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
-      color: var(--potters-clay) !important;
+      color: var(--text-dark) !important;
     }
 
     .nav-link {
       font-weight: 500;
-      color: var(--text-color) !important;
+      color: var(--text-dark) !important;
       margin: 0 10px;
       transition: all 0.3s ease;
     }
 
     .nav-link:hover {
-      color: var(--aurora-red) !important;
+      color: var(--burgundy) !important;
     }
 
     /* Кнопки */
     .btn-custom {
-      background-color: var(--aquatic-awe);
+      background-color: var(--burgundy);
       color: white;
       border-radius: 30px;
       padding: 12px 30px;
@@ -101,7 +102,7 @@
     }
 
     .btn-custom:hover {
-      background-color: var(--potters-clay);
+      background-color: #6D2430;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -134,7 +135,11 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: var(--potters-clay);
+      color: var(--text-dark);
+    }
+
+    .card-text {
+      color: var(--text-medium);
     }
 
     /* Параллакс секция */
@@ -175,7 +180,7 @@
 
     /* Сертификат */
     .certificate-section {
-      background-color: var(--airy-blue);
+      background-color: var(--light-gray);
       padding: 100px 0;
     }
 
@@ -189,12 +194,12 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 2px solid var(--spicy-mustard);
+      border: 2px solid var(--burgundy);
     }
 
     .certificate-text {
       font-size: 1.8rem;
-      color: var(--potters-clay);
+      color: var(--text-dark);
       font-weight: 300;
       text-align: center;
     }
@@ -202,7 +207,7 @@
     /* Карта */
     .map-section {
       padding: 100px 0;
-      background-color: var(--light-bg);
+      background-color: var(--beige);
     }
 
     .map-container {
@@ -210,24 +215,24 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 2px solid var(--aquatic-awe);
+      border: 2px solid var(--burgundy);
     }
 
     .map-placeholder {
       width: 100%;
       height: 100%;
-      background-color: #eee;
+      background-color: var(--light-gray);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--potters-clay);
+      color: var(--text-dark);
       font-size: 1.2rem;
     }
 
     /* Разделитель */
     .divider {
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--spicy-mustard), transparent);
+      background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
       margin: 100px auto;
       max-width: 80%;
     }
