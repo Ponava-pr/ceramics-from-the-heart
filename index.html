@@ -84,6 +84,41 @@
       margin: 0 auto;
     }
 
+    .parallax-section {
+      height: 500px;
+      background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin: 100px 0;
+    }
+
+    .parallax-overlay {
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .parallax-content h2 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
     .section {
       padding: 100px 0;
       position: relative;
@@ -296,6 +331,14 @@
     </div>
   </div>
 </section>
+
+<div class="parallax-section">
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content">
+    <h2>Подари незабываемые эмоции</h2>
+    <p class="lead">Создайте вместе что-то настоящее</p>
+  </div>
+</div>
 
 <section class="certificate-section">
   <div class="container">
