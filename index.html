@@ -1,122 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clay&Day — гончарная мастерская</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Керамика от сердца</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fefcf8;
-      color: #333;
+      background-color: #fdfcf8;
     }
+
     header {
-      background-image: url('https://images.unsplash.com/photo-1588017365643-04d76c91b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
+      background-color: #fff0f0;
+      padding: 100px 0;
       text-align: center;
     }
-    header div {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 2rem;
-      border-radius: 20px;
+
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    section {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 0 1rem;
+
+    .nav-link {
+      font-weight: 500;
+      color: #444;
     }
-    h1, h2 {
-      font-family: 'Georgia', serif;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .feature {
-      flex: 1 1 250px;
-      background: white;
-      padding: 1rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #eee;
-    }
-    button {
-      padding: 0.5rem 1.2rem;
-      border-radius: 999px;
-      background: white;
-      color: black;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-    button:hover {
-      background: #f0f0f0;
+
+    .nav-link:hover {
+      color: #b4714e;
     }
   </style>
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Керамика от сердца</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+        <li class="nav-item"><a class="nav-link" href="#workshops">Мастер-классы</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <header>
-  <div>
-    <h1>Clay&Day</h1>
-    <p>Твори руками, чувствуй сердцем</p>
-    <button>Записаться на мастер-класс</button>
+  <div class="container">
+    <h1 class="display-4">Керамика от сердца</h1>
+    <p class="lead">Гончарная мастерская, где творчество встречает тепло</p>
   </div>
 </header>
-
-<section>
-  <h2>О мастерской</h2>
-  <p>Clay&Day — уютное пространство для творчества и вдохновения. Здесь вы можете попробовать себя в гончарном деле, создать уникальные изделия и просто отдохнуть от суеты.</p>
-  <div class="features">
-    <div class="feature">
-      <h3>Уютная атмосфера</h3>
-      <p>Теплое пространство с чаем, музыкой и запахом глины.</p>
-    </div>
-    <div class="feature">
-      <h3>Обучение с нуля</h3>
-      <p>Мастера помогут освоить гончарное дело с первых шагов.</p>
-    </div>
-    <div class="feature">
-      <h3>Ручная работа</h3>
-      <p>Каждое изделие — отражение вашей индивидуальности.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Мастер-классы</h2>
-  <ul>
-    <li><strong>Кружка своими руками:</strong> Подходит для новичков. Стоимость: 2500₽</li>
-    <li><strong>Работа на гончарном круге:</strong> Базовые навыки и создание формы. Стоимость: 3500₽</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Контакты</h2>
-  <p>Санкт-Петербург, ул. Гончарная, д. 15</p>
-  <p>Телефон: +7 (999) 123-45-67</p>
-  <p>Email: clayandday@example.com</p>
-</section>
-
-<footer>
-  © 2025 Clay&Day. Все права защищены.
-</footer>
-
-</body>
-</html>
