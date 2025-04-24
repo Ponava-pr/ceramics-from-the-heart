@@ -63,27 +63,55 @@
       padding: 0 20px;
     }
 
-    .quote-section {
+    .quote-container {
       position: relative;
-      min-height: 30vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      padding: 60px 0 100px;
       background-color: var(--beige);
-      padding: 60px 0;
+    }
+
+    .quote-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-quote {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       color: var(--burgundy);
-      padding: 0 20px;
       font-style: italic;
-      max-width: 800px;
-      margin: 0 auto;
+      text-align: left;
+      line-height: 1.4;
+      margin-bottom: 30px;
+      padding-top: 20px;
     }
 
+    .quote-image {
+      position: fixed;
+      top: 0;
+      left: 20%;
+      width: 60%;
+      height: 300px;
+      background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 1;
+      margin-top: 100px;
+      opacity: 0.9;
+    }
+
+    .quote-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(245,233,220,0.9) 0%, rgba(245,233,220,0.7) 50%, rgba(245,233,220,0.9) 100%);
+      z-index: 1;
+    }
+
+    /* Остальные стили остаются без изменений */
     .parallax-section {
       height: 500px;
       background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center fixed;
@@ -287,12 +315,16 @@
   </div>
 </section>
 
-<section class="quote-section">
-  <div class="hero-quote">
-    "Мараем руки — очищаем душу."<br>
-    В Potty мы формуем не только глину, но и моменты.
+<div class="quote-container">
+  <div class="quote-image"></div>
+  <div class="quote-overlay"></div>
+  <div class="quote-content">
+    <div class="hero-quote">
+      "Мараем руки — очищаем душу."<br>
+      В Potty мы формуем не только глину, но и моменты.
+    </div>
   </div>
-</section>
+</div>
 
 <section id="workshops" class="section">
   <div class="container">
