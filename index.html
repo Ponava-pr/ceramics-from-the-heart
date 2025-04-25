@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
       --beige: #F5E9DC;
@@ -358,13 +360,12 @@
   </div>
 </section>
 
-<div class="parallax-section">
-  <div class="parallax-overlay"></div>
-  <div class="parallax-content">
-    <h2>Подари незабываемые эмоции</h2>
-    <p class="lead">Создайте вместе что-то настоящее</p>
+<section class="section" style="background-color: var(--dark-beige); text-align: center;">
+  <div class="container" data-aos="fade-up">
+    <h2 style="font-size: 3.5rem; color: var(--text-dark); margin-bottom: 1rem;">Подари незабываемые эмоции</h2>
+    <p class="lead" style="color: var(--text-medium);">Создайте вместе что-то настоящее</p>
   </div>
-</div>
+</section>
 
 <section class="certificate-section">
   <div class="container">
@@ -427,6 +428,14 @@
     </div>
   </div>
 </footer>
+  
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, 
+    duration: 1200 // 
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
