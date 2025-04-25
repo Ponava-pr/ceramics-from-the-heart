@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Potty — гончарная мастерская</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -16,7 +17,7 @@
       --text-dark: #333333;
       --text-medium: #555555;
     }
-    
+
     body {
       font-family: 'Open Sans', sans-serif;
       background-color: var(--beige);
@@ -104,7 +105,6 @@
       margin-bottom: 20px;
     }
 
-    /* Остальные стили */
     .section {
       padding: 100px 0;
       position: relative;
@@ -281,113 +281,106 @@
       margin: 100px auto;
       max-width: 80%;
     }
+
+    footer ul {
+      padding-left: 0;
+    }
+
+    footer ul li {
+      list-style: none;
+    }
+
+    .gallery img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .quote-parallax, .parallax-section {
+        background-attachment: scroll;
+      }
+    }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Potty.</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
-        <li class="nav-item"><a class="nav-link" href="#workshops">Мастер-классы</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!-- ВСЁ, ЧТО БЫЛО УЖЕ У ТЕБЯ -->
 
-<section class="hero-section">
-  <div class="hero-content">
-    <h1 class="main-title">Potty.</h1>
-    <p class="main-subtitle">Гончарная мастерская с душой</p>
+<!-- ВСТАВЛЯЕМ ДО script В САМОМ КОНЦЕ: -->
+
+<!-- О нас -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">О нас</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="text-center">
+          Иван Иванов: Наша гончарная мастерская Potty вдохновляет создавать уникальные изделия своими руками. Мы объединяем традиции и современность в каждом произведении.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="quote-parallax">
-  <div class="quote-parallax-overlay"></div>
-  <div class="quote-content">
-    <div class="hero-quote">
-      "Мараем руки — очищаем душу."<br>
-      В Potty мы формиуем не только глину, но и моменты.
+<!-- Галерея -->
+<section id="gallery" class="section" style="background-color: #f5e9dc;">
+  <div class="container">
+    <h2 class="section-title">Галерея</h2>
+    <div class="row g-2 gallery">
+      <div class="col-6 col-md-4">
+        <img src="https://i.pinimg.com/736x/fb/c1/59/fbc159411808b3a63c726e1fb1a6651d.jpg" class="img-fluid" alt="1">
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" class="img-fluid" alt="2">
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" class="img-fluid" alt="3">
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" class="img-fluid" alt="4">
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" class="img-fluid" alt="5">
+      </div>
+      <div class="col-6 col-md-4">
+        <img src="https://i.pinimg.com/736x/fb/c1/59/fbc159411808b3a63c726e1fb1a6651d.jpg" class="img-fluid" alt="6">
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<section id="workshops" class="section">
+<!-- Контакты -->
+<footer id="contacts" class="section" style="background-color: #E8D9C5;">
   <div class="container">
-    <h2 class="section-title">Форматы мастер-классов</h2>
-    <div class="row">
+    <div class="row text-center">
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="https://avatars.mds.yandex.net/get-altay/5517598/2a0000017e0ab5a5fe17f1f932605c89b39f/XXL_height" class="card-img-top" alt="Групповой мастер-класс">
-          <div class="card-body">
-            <h3 class="card-title">Групповой</h3>
-            <p class="card-text">Мастер-класс в группе до 10 человек.</p>
-            <button class="btn btn-custom">Записаться</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" class="card-img-top" alt="Индивидуальный мастер-класс">
-          <div class="card-body">
-            <h3 class="card-title">Индивидуальный</h3>
-            <p class="card-text">Персональное занятие с мастером.</p>
-            <button class="btn btn-custom">Записаться</button>
-          </div>
-        </div>
+        <h5>Potty.</h5>
+        <p>ИП Иван Иванов<br>ИНН 000000000000<br>ОГРН 0000000000000</p>
       </div>
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" class="card-img-top" alt="Мастер-класс на свидании">
-          <div class="card-body">
-            <h3 class="card-title">Романтический</h3>
-            <p class="card-text">Необычный формат свидания.</p>
-            <button class="btn btn-custom">Записаться</button>
-          </div>
+        <h5>Меню</h5>
+        <ul class="list-unstyled">
+          <li><a href="#about" class="nav-link">О нас</a></li>
+          <li><a href="#workshops" class="nav-link">Мастер-классы</a></li>
+          <li><a href="#gallery" class="nav-link">Галерея</a></li>
+          <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Контакты</h5>
+        <p>+7 (900) 000-00-00<br>г. Санкт-Петербург, ул. Примерная, 1</p>
+        <div class="d-flex justify-content-center">
+          <a href="#" class="me-3 text-dark"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="me-3 text-dark"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="me-3 text-dark"><i class="bi bi-vk"></i></a>
+          <a href="#" class="text-dark"><i class="bi bi-pinterest"></i></a>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<div class="parallax-section">
-  <div class="parallax-overlay"></div>
-  <div class="parallax-content">
-    <h2>Подари незабываемые эмоции</h2>
-    <p class="lead">Создайте вместе что-то настоящее</p>
-  </div>
-</div>
-
-<section class="certificate-section">
-  <div class="container">
-    <div class="certificate-box">
-      <div class="certificate-text">Подарочный сертификат<br>на мастер-класс</div>
-    </div>
-    <div class="text-center mt-5">
-      <button class="btn btn-custom btn-lg">Приобрести</button>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="map-section">
-  <div class="container">
-    <h2 class="section-title">Как нас найти?</h2>
-    <div class="map-container">
-      <div class="map-placeholder">
-        Карта мастерской в Санкт-Петербурге
-      </div>
-    </div>
-  </div>
-</section>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
