@@ -11,6 +11,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
+    /* ===== Global Variables & Base Styles ===== */
     :root {
       --beige: #F5E9DC;
       --dark-beige: #E8D9C5;
@@ -34,6 +35,69 @@
       color: var(--text-dark);
     }
 
+    /* ===== Utility Classes ===== */
+    .bg-beige {
+      background-color: var(--beige);
+    }
+
+    .bg-dark-beige {
+      background-color: var(--dark-beige);
+    }
+
+    .text-burgundy {
+      color: var(--burgundy);
+    }
+
+    .divider {
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
+      margin: 60px auto 0;
+      max-width: 80%;
+    }
+
+    .full-divider {
+      height: 6px;
+      background-color: var(--text-dark);
+      width: 100%;
+      margin: 60px 0 30px;
+    }
+
+    /* ===== Header & Navigation ===== */
+    nav {
+      background-color: var(--beige);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      padding: 15px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--text-dark) !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark) !important;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--burgundy) !important;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero-section {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 0;
+    }
+
     .main-title {
       font-size: 5.5rem;
       letter-spacing: 2px;
@@ -48,23 +112,7 @@
       margin-bottom: 3rem;
     }
 
-    .hero-section {
-      position: relative;
-      min-height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background-color: var(--beige);
-      padding: 80px 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      padding: 0 20px;
-    }
-
+    /* ===== Quote Parallax ===== */
     .quote-parallax {
       min-height: 200px;
       background-position: center;
@@ -105,42 +153,10 @@
       margin-bottom: 20px;
     }
 
-    /* Параллакс эффект только для десктопа */
-    @media (min-width: 769px) {
-      .quote-parallax {
-        height: 45vh;
-        background-attachment: fixed;
-      }
-    }
-
-    /* Стили для мобильных */
-    @media (max-width: 768px) {
-      .quote-parallax {
-        background-attachment: scroll;
-        height: auto;
-        padding: 60px 20px;
-      }
-  
-      .hero-quote {
-        font-size: 1.5rem;
-        text-align: center;
-      }
-  
-      .quote-content {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-      }
-  
-      .quote-parallax-overlay {
-        background: rgba(0,0,0,0.3);
-      }
-    }
-    /* Остальные стили */
+    /* ===== Sections ===== */
     .section {
       padding: 100px 0;
       position: relative;
-      background-color: var(--beige);
     }
 
     .section-title {
@@ -148,54 +164,8 @@
       margin-bottom: 2rem;
       text-align: center;
     }
-    
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-      }
-    }
-    
-    nav {
-      background-color: var(--beige);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-      padding: 15px 0;
-      border-bottom: 1px solid var(--light-gray);
-    }
 
-    .navbar-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--text-dark) !important;
-    }
-
-    .nav-link {
-      font-weight: 500;
-      color: var(--text-dark) !important;
-      margin: 0 10px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--burgundy) !important;
-    }
-
-    .btn-custom {
-      background-color: var(--burgundy);
-      color: white;
-      border-radius: 30px;
-      padding: 12px 30px;
-      font-weight: 500;
-      border: none;
-      transition: all 0.3s ease;
-    }
-
-    .btn-custom:hover {
-      background-color: #6D2430;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
+    /* ===== Cards ===== */
     .card {
       border: none;
       border-radius: 12px;
@@ -230,6 +200,24 @@
       color: var(--text-medium);
     }
 
+    /* ===== Buttons ===== */
+    .btn-custom {
+      background-color: var(--burgundy);
+      color: white;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-weight: 500;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #6D2430;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* ===== Parallax Section ===== */
     .parallax-section {
       height: 500px;
       background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center fixed;
@@ -252,22 +240,17 @@
       height: 100%;
     }
 
-    .parallax-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 20px;
-    }
-
     .parallax-content h2 {
       font-size: 3.5rem;
       margin-bottom: 2rem;
       color: white;
     }
 
+    /* ===== Certificate Section ===== */
     .certificate-section {
-      background-color: var(--beige);
+      background: url('https://i.postimg.cc/02nxW8Rq/Chat-GPT-Image-25-2025-16-59-12.png') center/cover no-repeat;
       padding: 40px 0 60px;
+      text-align: center;
     }
 
     .certificate-box {
@@ -290,9 +273,9 @@
       text-align: center;
     }
 
+    /* ===== Map Section ===== */
     .map-section {
       padding: 100px 0;
-      background-color: var(--beige);
     }
 
     .map-container {
@@ -314,21 +297,50 @@
       font-size: 1.2rem;
     }
 
-    .divider {
-      height: 5px;
-      background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
-      margin: 0px auto;
-      max-width: 80%;
-  
+    /* ===== Footer ===== */
+    footer {
+      padding: 100px 0;
     }
-    
-    .full-divider {
-      height: 6px;
-      background-color: var(--text-dark);
-      width: 100%;
-      margin: 60px 0 30px;
-}
-    
+
+    /* ===== Media Queries ===== */
+    @media (min-width: 769px) {
+      .quote-parallax {
+        height: 45vh;
+        background-attachment: fixed;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .quote-parallax {
+        background-attachment: scroll;
+        height: auto;
+        padding: 60px 20px;
+      }
+  
+      .hero-quote {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+  
+      .quote-content {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+  
+      .quote-parallax-overlay {
+        background: rgba(0,0,0,0.3);
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .main-title {
+        font-size: 4rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -350,28 +362,28 @@
   </div>
 </nav>
 
-<section class="hero-section">
+<section class="hero-section bg-beige">
   <div class="hero-content">
-    <h1 class="main-title">Potty.</h1>
-    <p class="main-subtitle">Гончарная мастерская с душой</p>
+    <h1 class="main-title" data-aos="fade-down">Potty.</h1>
+    <p class="main-subtitle" data-aos="fade-up" data-aos-delay="200">Гончарная мастерская с душой</p>
   </div>
 </section>
 
 <div class="quote-parallax">
   <div class="quote-parallax-overlay"></div>
   <div class="quote-content">
-    <div class="hero-quote">
+    <div class="hero-quote" data-aos="fade-right">
       «Мараем руки — очищаем душу»<br>
       В Potty рождаются не только изделия из глины, но и тёплые воспоминания.
     </div>
   </div>
 </div>
 
-<section id="workshops" class="section">
+<section id="workshops" class="section bg-beige">
   <div class="container">
-    <h2 class="section-title">Форматы мастер-классов</h2>
+    <h2 class="section-title" data-aos="fade-up">Форматы мастер-классов</h2>
     <div class="row">
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100">
           <img src="https://avatars.mds.yandex.net/get-altay/5517598/2a0000017e0ab5a5fe17f1f932605c89b39f/XXL_height" class="card-img-top" alt="Групповой мастер-класс">
           <div class="card-body">
@@ -381,7 +393,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
         <div class="card h-100">
           <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" class="card-img-top" alt="Индивидуальный мастер-класс">
           <div class="card-body">
@@ -391,7 +403,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
         <div class="card h-100">
           <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" class="card-img-top" alt="Мастер-класс на свидании">
           <div class="card-body">
@@ -405,18 +417,18 @@
   </div>
 </section>
   
-<div class="divider" style="margin-top: 60px; margin-bottom: 0;"></div>
+<div class="divider"></div>
   
-<section class="section" style="background-color: var(--beige); text-align: center; padding: 40px 0 20px;">
+<section class="section bg-beige text-center py-5">
   <div class="container" data-aos="zoom-out-down">
-    <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 1rem;">Подари незабываемые эмоции</h2>
-    <p class="lead" style="color: var(--text-medium);">Создайте вместе что-то настоящее</p>
+    <h2 class="display-4 mb-3">Подари незабываемые эмоции</h2>
+    <p class="lead text-muted">Создайте вместе что-то настоящее</p>
   </div>
 </section>
 
-<section class="certificate-section" style="background: url('https://i.postimg.cc/02nxW8Rq/Chat-GPT-Image-25-2025-16-59-12.png') center/cover no-repeat; text-align: center;">
+<section class="certificate-section">
   <div class="container">
-    <div class="certificate-box">
+    <div class="certificate-box" data-aos="zoom-in">
       <div class="certificate-text">Подарочный сертификат<br>на мастер-класс</div>
     </div>
     <div class="text-center mt-3">
@@ -427,46 +439,48 @@
 
 <div class="divider"></div>
 
-<section class="map-section">
+<section class="map-section bg-beige">
   <div class="container">
     <h2 class="section-title">Как нас найти?</h2>
     <div id="map" class="map-container"></div>
   </div>
 </section>
   
-<footer id="contacts" class="section" style="background-color: #E8D9C5;">
+<footer id="contacts" class="section bg-dark-beige">
   <div class="container">
     <div class="row">
       <!-- Блок ИП -->
       <div class="col-md-4 mb-4">
         <h5>Potty.</h5>
-        <p style="text-transform: uppercase; font-size: 0.9rem; line-height: 1; color: #696969; margin-top: 20px;">
+        <address class="text-uppercase small mt-4 text-secondary">
           ИП Мария Иванова<br>
           ИНН 000000000000<br>
           ОГРН 0000000000000
-        </p>
+        </address>
       </div>
 
       <!-- Блок меню -->
       <div class="col-md-4 mb-4">
         <h5>Меню</h5>
-        <ul class="list-unstyled" style="margin-top: 20px;">
-          <li style="margin-bottom: 5px;"><a href="#about" class="nav-link p-0">О нас</a></li>
-          <li style="margin-bottom: 5px;"><a href="#workshops" class="nav-link p-0">Мастер-классы</a></li>
-          <li style="margin-bottom: 5px;"><a href="#gallery" class="nav-link p-0">Галерея</a></li>
-          <li style="margin-bottom: 5px;"><a href="#contacts" class="nav-link p-0">Контакты</a></li>
+        <ul class="list-unstyled mt-4">
+          <li class="mb-2"><a href="#about" class="nav-link p-0">О нас</a></li>
+          <li class="mb-2"><a href="#workshops" class="nav-link p-0">Мастер-классы</a></li>
+          <li class="mb-2"><a href="#gallery" class="nav-link p-0">Галерея</a></li>
+          <li class="mb-2"><a href="#contacts" class="nav-link p-0">Контакты</a></li>
         </ul>
       </div>
 
       <!-- Блок контакты + соцсети -->
       <div class="col-md-4 mb-4">
         <h5>Контакты</h5>
-        <p style="margin-top: 20px;">+7 (900) 000-00-00<br>г. Санкт-Петербург, ул. Мильпопс-жужужу, 1</p>
-        <div class="d-flex gap-3" style="margin-top: 10px;">
-          <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-dark"><i class="bi bi-telegram"></i></a>
-          <a href="#" class="text-dark"><i class="bi bi-vk"></i></a>
-          <a href="#" class="text-dark"><i class="bi bi-pinterest"></i></a>
+        <div class="mt-4">
+          <p>+7 (900) 000-00-00<br>г. Санкт-Петербург, ул. Мильпопс-жужужу, 1</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-telegram"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-vk"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-pinterest"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -476,37 +490,32 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    once: false, 
-    duration: 1000 // 
+    once: true, // Не забудь, анимация один раз
+    duration: 800
   });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
- <!-- обработчик параллакса для моб. устройств ниже -->
-  <script>
+<script>
   document.addEventListener('DOMContentLoaded', function() {
     function handleParallax() {
       const quoteSection = document.querySelector('.quote-parallax');
       if (!quoteSection) return;
       
-      if (window.innerWidth <= 768) {
-        quoteSection.style.backgroundAttachment = 'scroll';
-      } else {
-        quoteSection.style.backgroundAttachment = 'fixed';
-      }
+      quoteSection.style.backgroundAttachment = window.innerWidth <= 768 ? 'scroll' : 'fixed';
     }
     
     handleParallax();
     window.addEventListener('resize', handleParallax);
   });
 </script>
-<!-- компактный скрипт карты -->
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=93470f69-5044-43d2-b2fa-9c60fd1306a5&lang=ru_RU"></script>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=93470f69-5044-43d2-b2fa-9c60fd1306a5&lang=ru_RU"></script>
 <script>
   ymaps.ready(() => {
     new ymaps.Map("map", {
-      center: [59.934280, 30.335099], // координаты рандома центра
+      center: [59.934280, 30.335099],
       zoom: 16,
       controls: ['zoomControl']
     }).geoObjects.add(
