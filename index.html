@@ -332,6 +332,9 @@
       user-select: none;
       pointer-events: none; /* Чтобы не мешать скроллу мышкой */
     }
+      #gallery {
+    scroll-margin-top: 200px; 
+  }
   
    /* ===== Footer ===== */
     footer {
@@ -656,6 +659,12 @@
 
     if (scrollY + viewportHeight > sectionTop && scrollY < sectionTop + sectionHeight) {
       let progress = (scrollY + viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
+
+      // ↓↓↓ Мобильная регулировка ↓↓↓
+      const isMobile = windowWidth <= 768;
+      if (isMobile) {
+        progress *= 0.5; // Замедляем прокрутку (чем меньше — тем медленнее)
+      }
 
       const maxTranslateX = trackWidth - windowWidth;
       if (maxTranslateX <= 0) return;
