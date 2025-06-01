@@ -296,7 +296,63 @@
       color: var(--text-dark);
       font-size: 1.2rem;
     }
+    
+    /* Общий стиль заголовка */
+    .section-title {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
 
+    /* Обёртка галереи */
+    .gallery-section {
+      padding: 4rem 2rem;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    /* Контейнер для горизонтального скролла */
+    .gallery-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      padding-bottom: 1rem;
+    }
+
+    /* Скрываем скроллбар */
+    .gallery-container::-webkit-scrollbar {
+      display: none;
+    }
+    .gallery-container {
+      -ms-overflow-style: none;  /* IE 10+ */
+      scrollbar-width: none;     /* Firefox */
+    }
+
+    /* Лента изображений */
+    .gallery-track {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    /* Изображения */
+    .gallery-track img {
+      flex: 0 0 auto;
+      width: 225px;   /* Подбери под свой дизайн */
+      height: 225px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-track img:hover {
+      transform: scale(1.05);
+    }
+    
     /* ===== Footer ===== */
     footer {
       padding: 100px 0;
@@ -490,7 +546,20 @@
   </div>
 </section>
   
-<div class="divider"></div>
+<section id="gallery" class="gallery-section">
+  <h2 class="section-title">Галерея</h2>
+  <div class="gallery-container">
+    <div class="gallery-track">
+      <img src="https://i.pinimg.com/736x/a5/94/4e/a5944e7829896990ff76a9202801b255.jpg" alt="Фото 1" />
+      <img src="https://i.pinimg.com/736x/57/94/fd/5794fdeb480ea94710bec6e4739de8b5.jpg" alt="Фото 2" />
+      <img src="https://i.pinimg.com/736x/c7/0f/86/c70f86ef1e617a1480b6cfff14618373.jpg" alt="Фото 3" />
+      <img src="https://i.pinimg.com/736x/2e/60/3e/2e603ee51ef893b1fbc0c43dbe5a7be6.jpg" alt="Фото 4" />
+      <img src="https://i.pinimg.com/736x/f5/24/ff/f524ffa7114f00f056804e9f54671b52.jpg" alt="Фото 5" />
+      <img src="https://i.pinimg.com/736x/c0/ed/e6/c0ede6495fdf7d5708e8d866309afb72.jpg" alt="Фото 6" />
+      <img src="https://i.pinimg.com/736x/dd/5e/1f/dd5e1f5375e18362777ce6597ca3583f.jpg" alt="Фото 7" />
+    </div>
+  </div>
+</section>
   
 <section class="section bg-beige text-center">
   <div class="container" data-aos="zoom-out-down">
