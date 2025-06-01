@@ -264,21 +264,25 @@
     .certificate-box {
       background-color: white;
       height: 400px;
-      max-width: 650px;
-      margin: 0 auto;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border: 2px solid var(--burgundy);
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* для анимации возможно не сработает */
+    }
+    
+    .certificate-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
     }
 
-    .certificate-text {
-      font-size: 1.8rem;
-      color: var(--text-dark);
-      font-weight: 300;
-      text-align: center;
+    .certificate-img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     /* ===== Map Section ===== */
@@ -339,7 +343,6 @@
     #gallery {
       scroll-margin-top: 200px;
       padding-top: 100px; /* Пространство сверху, удали если не сработает */
-      border-bottom: linear-gradient(90deg, transparent, var(--text-dark), transparent);
     }
 
    /* ===== Footer ===== */
@@ -561,22 +564,29 @@
 <section class="section bg-beige text-center">
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">Подари незабываемые эмоции</h2>
-    <h3 class="mb-4 fw-bold" data-aos="fade-up">Создайте вместе что-то настоящее</h3>
+    <h3 class="mb-4 fw-bold" data-aos="fade-up">Подарочный сертификат на мастер-класс</h3>
   </div>
 </section>
 
 <section class="certificate-section">
   <div class="container">
-    <div class="certificate-box">
-      <div class="certificate-text">Подарочный сертификат<br>на мастер-класс</div>
+    <div class="row justify-content-center g-4">
+      <div class="col-md-6">
+        <div class="certificate-box">
+          <img src="https://i.pinimg.com/736x/35/b7/63/35b76336fd1b2b85d3e1aee1e90fa55d.jpg" alt="Подарочный сертификат 1" class="certificate-img">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="certificate-box">
+          <img src="https://i.pinimg.com/736x/65/09/20/650920bd0e393c9ae8afbb45db31050d.jpg" alt="Подарочный сертификат 2" class="certificate-img">
+        </div>
+      </div>
     </div>
-    <div class="text-center mt-3">
+    <div class="text-center mt-4">
       <button class="btn btn-custom btn-lg">Приобрести</button>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
 
 <section class="map-section bg-beige">
   <div class="container">
