@@ -367,7 +367,158 @@
 
    /* ===== Footer ===== */
     footer {
-      padding: 100px 0;
+      padding: 80px 0 60px;
+      background-color: var(--dark-beige);
+      position: relative;
+    }
+    
+    .footer-divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--text-dark), transparent);
+    }
+    
+    .footer-column {
+      padding: 0 30px;
+      position: relative;
+    }
+    
+    .footer-column:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 1px;
+      background-color: rgba(0,0,0,0.1);
+    }
+    
+    .footer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--burgundy);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--burgundy);
+    }
+    
+    .footer-address {
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+    
+    .footer-menu {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .footer-menu li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-menu li a {
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 0;
+      display: inline-block;
+    }
+    
+    .footer-menu li a:hover {
+      color: var(--burgundy);
+      padding-left: 8px;
+    }
+    
+    .footer-menu li a::before {
+      content: "→";
+      position: absolute;
+      left: -15px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: var(--burgundy);
+    }
+    
+    .footer-menu li a:hover::before {
+      left: -10px;
+      opacity: 1;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+    }
+    
+    .contact-item i {
+      color: var(--burgundy);
+      font-size: 1.2rem;
+      min-width: 25px;
+      margin-top: 4px;
+    }
+    
+    .contact-item a, .contact-item span {
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item a:hover {
+      color: var(--burgundy);
+      text-decoration: underline;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1.5rem;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background-color: var(--beige);
+      border-radius: 50%;
+      color: var(--text-dark);
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .social-icon:hover {
+      background-color: var(--burgundy);
+      color: white !important;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      color: var(--text-medium);
+      font-size: 0.9rem;
     }
 
     /* ===== Media Queries ===== */
@@ -614,46 +765,59 @@
   </div>
 </section>
   
-<footer id="contacts" class="section bg-dark-beige">
-  <div class="container">
-    <div class="row">
-      <!-- Блок ИП -->
-      <div class="col-md-4 mb-4">
-        <h5>Potty.</h5>
-        <address class="text-uppercase small mt-4 text-secondary">
-          ИП Мария Иванова<br>
-          ИНН 000000000000<br>
-          ОГРН 0000000000000
-        </address>
-      </div>
+<footer id="contacts">
+    <div class="footer-divider"></div>
+    <div class="container">
+      <div class="row">
+        <!-- Блок ИП -->
+        <div class="col-md-4 footer-column">
+          <h5 class="footer-title">Potty.</h5>
+          <address class="footer-address">
+            ИП Мария Иванова<br>
+            ИНН 000000000000<br>
+            ОГРН 0000000000000
+          </address>
+        </div>
 
-      <!-- Блок меню -->
-      <div class="col-md-4 mb-4">
-        <h5>Меню</h5>
-        <ul class="list-unstyled mt-4">
-          <li class="mb-2"><a href="#about" class="nav-link p-0">О нас</a></li>
-          <li class="mb-2"><a href="#workshops" class="nav-link p-0">Мастер-классы</a></li>
-          <li class="mb-2"><a href="#gallery" class="nav-link p-0">Галерея</a></li>
-          <li class="mb-2"><a href="#contacts" class="nav-link p-0">Контакты</a></li>
-        </ul>
-      </div>
+        <!-- Блок меню -->
+        <div class="col-md-4 footer-column">
+          <h5 class="footer-title">Меню</h5>
+          <ul class="footer-menu">
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#workshops">Мастер-классы</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </div>
 
-      <!-- Блок контакты + соцсети -->
-      <div class="col-md-4 mb-4">
-        <h5>Контакты</h5>
-        <div class="mt-4">
-          <p>+7 (900) 000-00-00<br>г. Санкт-Петербург, ул. Мильпопс-жужужу, 1</p>
-          <div class="d-flex gap-3">
-            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-telegram"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-vk"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-pinterest"></i></a>
+        <!-- Блок контакты + соцсети -->
+        <div class="col-md-4 footer-column">
+          <h5 class="footer-title">Контакты</h5>
+          <div class="contact-item">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>г. Санкт-Петербург, ул. Мильпопс-жужужу, 1</span>
+          </div>
+          <div class="social-icons">
+            <!-- Ссылка на Telegram -->
+            <a href="https://t.me/ваш_канал" target="_blank" class="social-icon">
+              <i class="bi bi-telegram"></i>
+            </a>
+            <!-- Ссылка на Pinterest -->
+            <a href="https://pinterest.com/ваш_профиль" target="_blank" class="social-icon">
+              <i class="bi bi-pinterest"></i>
+            </a>
           </div>
         </div>
       </div>
+      <div class="copyright">
+        © 2023 Potty. Гончарная мастерская. Все права защищены.
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
   
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
