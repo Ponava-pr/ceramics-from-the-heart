@@ -364,6 +364,46 @@
       scroll-margin-top: 200px;
       padding-top: 100px; /* Пространство сверху, удали если некрасиво */
     }
+    
+    /* ===== Gallery mob ===== */
+    .gallery-mobile-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      padding-bottom: 1rem;
+      width: 100%;
+    }
+
+    /* Скрываем скроллбар */
+    .gallery-mobile-container::-webkit-scrollbar {
+      display: none;
+    }
+    .gallery-mobile-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .gallery-mobile-track {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .gallery-mobile-track img {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-right: 1rem;
+      vertical-align: top;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-mobile-track img:hover {
+      transform: scale(1.05);
+    }
 
    /* ===== Footer ===== */
     footer {
@@ -754,8 +794,9 @@
   
 <section id="gallery" class="gallery-section">
   <h2 class="section-title">Работы наших учеников</h2>
-  <div class="gallery-scroll-wrapper">
-    <div class="gallery-scroll-track">
+  <!-- Для мобильной галереи -->
+  <div class="gallery-mobile-container d-block d-md-none">
+    <div class="gallery-mobile-track">
       <img src="https://i.pinimg.com/736x/a5/94/4e/a5944e7829896990ff76a9202801b255.jpg" alt="Фото 1" />
       <img src="https://i.pinimg.com/736x/57/94/fd/5794fdeb480ea94710bec6e4739de8b5.jpg" alt="Фото 2" />
       <img src="https://i.pinimg.com/736x/c7/0f/86/c70f86ef1e617a1480b6cfff14618373.jpg" alt="Фото 3" />
@@ -772,9 +813,27 @@
       <img src="https://i.pinimg.com/736x/d2/78/91/d2789148e68c808a55187d42c10c7975.jpg" alt="Фото 14" />
     </div>
   </div>
+  <!-- Оставляем текущую галерею только для десктопа -->
+  <div class="gallery-scroll-wrapper d-none d-md-block">
+    <div class="gallery-scroll-track">
+      <img src="https://i.pinimg.com/736x/a5/94/4e/a5944e7829896990ff76a9202801b255.jpg" alt="Фото 1" />
+      <img src="https://i.pinimg.com/736x/57/94/fd/5794fdeb480ea94710bec6e4739de8b5.jpg" alt="Фото 2" />
+      <img src="https://i.pinimg.com/736x/c7/0f/86/c70f86ef1e617a1480b6cfff14618373.jpg" alt="Фото 3" />
+      <img src="https://i.pinimg.com/736x/2e/60/3e/2e603ee51ef893b1fbc0c43dbe5a7be6.jpg" alt="Фото 4" />
+      <img src="https://i.pinimg.com/736x/f5/24/ff/f524ffa7114f00f056804e9f54671b52.jpg" alt="Фото 5" />
+      <img src="https://i.pinimg.com/736x/c0/ed/e6/c0ede6495fdf7d5708e8d866309afb72.jpg" alt="Фото 6" />
+      <img src="https://i.pinimg.com/736x/dd/5e/1f/dd5e1f5375e18362777ce6597ca3583f.jpg" alt="Фото 7" />
+      <img src="https://i.pinimg.com/736x/73/3b/4a/733b4ac3488f0ff048cd8879188df44c.jpg" alt="Фото 8" />
+      <img src="https://i.pinimg.com/736x/aa/bc/b0/aabcb0ff24095cc367a394641201175d.jpg" alt="Фото 9" />
+      <img src="https://i.pinimg.com/736x/45/1d/b0/451db020652d79062302573efd9b514e.jpg" alt="Фото 10" />
+      <img src="https://i.pinimg.com/736x/68/1a/76/681a760771a790d15c927cc50175ca6f.jpg" alt="Фото 11" />
+      <img src="https://i.pinimg.com/736x/1f/f4/d3/1ff4d388a52b6223f070108d3b2a5271.jpg" alt="Фото 12" />
+      <img src="https://i.pinimg.com/736x/c2/3c/c2/c23cc259286f9b15df04f2c80450332b.jpg" alt="Фото 13" />
+      <img src="https://i.pinimg.com/736x/d2/78/91/d2789148e68c808a55187d42c10c7975.jpg" alt="Фото 14" />
+   </div>
+  </div>
 </section>
 
-  
 <section class="section bg-beige section-small-padding">
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">Подари незабываемые эмоции</h2>
@@ -951,10 +1010,14 @@
 <!-- Тут решается судьба галереи -->
 <script>
   window.addEventListener("scroll", () => {
+  // Работает только на десктопе
+    if (window.innerWidth <= 768) return;
+  
     const track = document.querySelector(".gallery-scroll-track");
     const gallerySection = document.querySelector("#gallery");
     if (!track || !gallerySection) return;
 
+  // Оригинальный код анимации для десктопа
     const viewportHeight = window.innerHeight;
     const scrollY = window.scrollY;
     const sectionTop = gallerySection.offsetTop;
@@ -964,18 +1027,11 @@
 
     if (scrollY + viewportHeight > sectionTop && scrollY < sectionTop + sectionHeight) {
       let progress = (scrollY + viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
-
-      //  Мобильная регулировка 
-      const isMobile = windowWidth <= 768;
-      if (isMobile) {
-        progress *= 0.5; // медленная прокрутка (чем меньше — тем медленнее)
-      }
-
+    
       const maxTranslateX = trackWidth - windowWidth;
       if (maxTranslateX <= 0) return;
 
       let translateX = progress * maxTranslateX;
-
       if (translateX < 0) translateX = 0;
       if (translateX > maxTranslateX) translateX = maxTranslateX;
 
