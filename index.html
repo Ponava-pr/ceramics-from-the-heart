@@ -256,9 +256,25 @@
 
     /* ===== Certificate Section ===== */
     .certificate-section {
-      background: url('https://i.postimg.cc/02nxW8Rq/Chat-GPT-Image-25-2025-16-59-12.png') center/cover no-repeat;
+      position: relative;
+      background: url('https://i.pinimg.com/736x/6f/aa/4c/6faa4c19adead2aea10051531c21e5c5.jpg') center/cover no-repeat;
       padding: 40px 0 60px;
       text-align: center;
+      z-index: 0;
+    }
+
+    .certificate-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4); 
+      z-index: 1;
+    }
+
+    .certificate-section .container {
+      position: relative;
+      z-index: 2; 
     }
 
     .certificate-box {
@@ -338,11 +354,11 @@
       object-fit: cover;
       border-radius: 12px;
       user-select: none;
-      pointer-events: none; /* Чтобы не мешать скроллу мышкой */
+      pointer-events: none; 
     }
     #gallery {
       scroll-margin-top: 200px;
-      padding-top: 100px; /* Пространство сверху, удали если не сработает */
+      padding-top: 100px; /* Пространство сверху, удали если некрасиво */
     }
 
    /* ===== Footer ===== */
@@ -573,7 +589,7 @@
     <div class="row justify-content-center g-4">
       <div class="col-md-6">
         <div class="certificate-box">
-          <img src="https://i.pinimg.com/736x/96/98/62/969862c570d170db1784bdd5c3395902.jpg" alt="Подарочный сертификат 1" class="certificate-img">
+          <img src="https://i.pinimg.com/736x/b4/af/45/b4af454c825fe885aa6f74b64cfd0bda.jpg" alt="Подарочный сертификат 1" class="certificate-img">
         </div>
       </div>
       <div class="col-md-6">
