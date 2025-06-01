@@ -298,82 +298,62 @@
     }
 
     /* ===== Стили галереи ===== */
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .section.bg-beige {
-      background-color: #fdf8f2;
-      padding: 60px 0;
-    }
-
-    .gallery-carousel {
+    .infinite-gallery {
       overflow: hidden;
       width: 100vw;
     }
 
-    .gallery-row {
+    .scrolling-strip {
       display: flex;
-      width: 100vw;
+      width: 100%;
       overflow: hidden;
       margin-bottom: 30px;
     }
 
-    .gallery-row.offset {
-      margin-left: 130px;
-    }
-
-    .gallery-track {
+    .scrolling-content {
       display: flex;
       animation: scroll-left 30s linear infinite;
-      width: fit-content;
     }
 
-    .gallery-track.reverse {
+    .scrolling-strip.reverse .scrolling-content {
       animation: scroll-right 30s linear infinite;
     }
 
-    .gallery-item {
+    .scrolling-content img {
       width: 250px;
       height: 250px;
-      flex-shrink: 0;
-      margin-right: 15px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
+      margin-right: 15px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     @keyframes scroll-left {
-     0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     @keyframes scroll-right {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(50%); }
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
 
-   @media (max-width: 768px) {
-      .gallery-item {
+  /* Для плавности на мобильных */
+    @media (max-width: 768px) {
+      .scrolling-content img {
         width: 180px;
         height: 180px;
       }
-
-      .gallery-row.offset {
-        margin-left: 90px;
-      }
-
-      .gallery-track {
-        animation-duration: 20s;
-      }
-    
-    /* ===== Footer ===== */
+    }
+   /* ===== Footer ===== */
     footer {
       padding: 100px 0;
     }
@@ -567,72 +547,38 @@
 </section>
   
 <!-- Галерея -->
-<section id="gallery" class="section bg-beige">
-  <h2 class="section-title" data-aos="fade-up" style="text-align: center;">Галерея</h2>
+<section id="gallery" style="padding: 60px 0; background: #f9f4ef;">
+  <h2 style="text-align: center; margin-bottom: 40px;">Галерея</h2>
 
-  <div class="gallery-carousel">
-    <!-- Верхний ряд -->
-    <div class="gallery-row" data-aos="fade-right">
-      <div class="gallery-track">
-        <!-- Основные изображения -->
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="Галерея 1">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="Галерея 2">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="Галерея 3">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="Галерея 4">
-        </div>
-
-        <!-- Копии для бесконечной прокрутки -->
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="Галерея 1">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="Галерея 2">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="Галерея 3">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="Галерея 4">
-        </div>
+  <!-- Обёртка для двух каруселей -->
+  <div class="infinite-gallery">
+    <!-- Первая лента -->
+    <div class="scrolling-strip">
+      <div class="scrolling-content">
+        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
+        <!-- Повторяем те же картинки -->
+        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
       </div>
     </div>
 
-    <!-- Нижний ряд -->
-    <div class="gallery-row offset" data-aos="fade-left">
-      <div class="gallery-track reverse">
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" alt="Галерея 5">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="Галерея 6">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="Галерея 7">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="Галерея 8">
-        </div>
-
-        <!-- Копии -->
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" alt="Галерея 5">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="Галерея 6">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="Галерея 7">
-        </div>
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="Галерея 8">
-        </div>
+    <!-- Вторая лента -->
+    <div class="scrolling-strip reverse">
+      <div class="scrolling-content">
+        <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
+        <!-- Повтор -->
+        <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
       </div>
     </div>
   </div>
