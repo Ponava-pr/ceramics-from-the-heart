@@ -297,53 +297,6 @@
       font-size: 1.2rem;
     }
 
-    /* ===== Gallery Section ===== */
-    .gallery-row {
-      display: flex;
-      overflow: hidden;
-      margin-bottom: 30px;
-      gap: 20px;
-    }
-
-    .gallery-item {
-      flex: 0 0 auto;
-      width: 600px; /* В 2 раза больше, чем в разделе "О нас" */
-      height: 600px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    /* Адаптивность */
-    @media (max-width: 768px) {
-      .gallery-item {
-        width: 400px;
-        height: 400px;
-      }
-  
-      .gallery-row {
-        gap: 15px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .gallery-item {
-        width: 300px;
-        height: 300px;
-      }
-    }
-    
     /* ===== Footer ===== */
     footer {
       padding: 100px 0;
@@ -537,76 +490,7 @@
   </div>
 </section>
   
-<!-- Раздел "Галерея" -->
-<section id="gallery" class="section bg-beige">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Работы наших учеников</h2>
-    
-    <!-- Первый ряд фото -->
-    <div class="gallery-row" id="galleryRow1">
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="Галерея 1">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="Галерея 2">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="Галерея 3">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="Галерея 4">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="Галерея 5">
-      </div>
-      <!-- Дубликаты для бесконечного эффекта -->
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="Галерея 1">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="Галерея 2">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="Галерея 3">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="Галерея 4">
-      </div>
-    </div>
-    
-    <!-- Второй ряд фото -->
-    <div class="gallery-row" id="galleryRow2">
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="Галерея 4">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="Галерея 5">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="Галерея 1">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="Галерея 2">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="Галерея 3">
-      </div>
-      <!-- Дубликаты для бесконечного эффекта -->
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="Галерея 4">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="Галерея 5">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="Галерея 1">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="Галерея 2">
-      </div>
-    </div>
-  </div>
-</section>
+<div class="divider"></div>
   
 <section class="section bg-beige text-center">
   <div class="container" data-aos="zoom-out-down">
@@ -684,40 +568,6 @@
   });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const galleryRow1 = document.getElementById('galleryRow1');
-    const galleryRow2 = document.getElementById('galleryRow2');
-    
-    // Начальная позиция для каждого ряда
-    let position1 = 0;
-    let position2 = 0;
-    
-    // Скорость движения для каждого ряда
-    const speed1 = 0.5;
-    const speed2 = 0.3;
-    
-    // Обработчик скролла
-    window.addEventListener('scroll', function() {
-      const scrollY = window.scrollY;
-      
-      // Первый ряд двигается быстрее
-      position1 = -scrollY * speed1;
-      galleryRow1.style.transform = `translateX(${position1}px)`;
-      
-      // Второй ряд двигается медленнее
-      position2 = -scrollY * speed2;
-      galleryRow2.style.transform = `translateX(${position2}px)`;
-    });
-    
-    // Инициализация позиций
-    galleryRow1.style.transform = `translateX(${position1}px)`;
-    galleryRow2.style.transform = `translateX(${position2}px)`;
-    galleryRow1.style.transition = 'transform 0.1s linear';
-    galleryRow2.style.transition = 'transform 0.1s linear';
-  });
-</script>
-  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
 <script>
