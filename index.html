@@ -300,55 +300,40 @@
       color: var(--text-dark);
       font-size: 1.2rem;
     }
-
-    /* ===== Обёртка галереи ===== */
+    
+    /* ===== Gallery ===== */
     .gallery-section {
       padding: 4rem 2rem;
       background-color: #fff;
+      position: relative;
       overflow: hidden;
     }
 
-    /* Контейнер для горизонтального скролла */
-    .gallery-container {
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-      padding-bottom: 1rem;
+    .gallery-scroll-wrapper {
+      width: 100%;
+      height: 250px; /* Высота ленты */
+      overflow: hidden;
+      position: relative;
     }
 
-    /* Скрываем скроллбар */
-    .gallery-container::-webkit-scrollbar {
-      display: none;
-    }
-    .gallery-container {
-      -ms-overflow-style: none;  /* IE 10+ */
-      scrollbar-width: none;     /* Firefox */
-    }
-
-    /* Лента изображений */
-    .gallery-track {
+    .gallery-scroll-track {
       display: flex;
       gap: 1.5rem;
-      width: max-content;
+      position: absolute;
+      will-change: transform;
+      transition: transform 0.2s ease-out;
     }
 
-    /* Изображения */
-    .gallery-track img {
-      flex: 0 0 auto;
-      width: 225px; 
+    .gallery-scroll-track img {
+      width: 225px;
       height: 225px;
       object-fit: cover;
       border-radius: 12px;
-      transition: transform 0.3s ease;
+      user-select: none;
+      pointer-events: none; /* Чтобы не мешать скроллу мышкой */
     }
-
-    .gallery-track img:hover {
-      transform: scale(1.05);
-    }
-    
-    /* ===== Footer ===== */
+  
+   /* ===== Footer ===== */
     footer {
       padding: 100px 0;
     }
@@ -543,8 +528,8 @@
   
 <section id="gallery" class="gallery-section">
   <h2 class="section-title" data-aos="fade-up">Работы наших учеников</h2>
-  <div class="gallery-container">
-    <div class="gallery-track" data-aos="fade-up">
+  <div class="gallery-scroll-wrapper" data-aos="fade-up">
+    <div class="gallery-scroll-track">
       <img src="https://i.pinimg.com/736x/a5/94/4e/a5944e7829896990ff76a9202801b255.jpg" alt="Фото 1" />
       <img src="https://i.pinimg.com/736x/57/94/fd/5794fdeb480ea94710bec6e4739de8b5.jpg" alt="Фото 2" />
       <img src="https://i.pinimg.com/736x/c7/0f/86/c70f86ef1e617a1480b6cfff14618373.jpg" alt="Фото 3" />
@@ -634,7 +619,7 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    once: false, // Не забудь, анимация один раз
+    once: false, // Не забудь, анимация всегда
     duration: 800
   });
 </script>
@@ -654,7 +639,38 @@
     window.addEventListener('resize', handleParallax);
   });
 </script>
+  
+<!-- Тут решается судьба галереи -->
+<script>
+  window.addEventListener("scroll", () => {
+    const track = document.querySelector(".gallery-scroll-track");
+    const gallerySection = document.querySelector("#gallery");
+    if (!track || !gallerySection) return;
 
+    const viewportHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    const sectionTop = gallerySection.offsetTop;
+    const sectionHeight = gallerySection.offsetHeight;
+    const trackWidth = track.scrollWidth;
+    const windowWidth = window.innerWidth;
+
+    if (scrollY + viewportHeight > sectionTop && scrollY < sectionTop + sectionHeight) {
+      let progress = (scrollY + viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
+
+      const maxTranslateX = trackWidth - windowWidth;
+      if (maxTranslateX <= 0) return;
+
+      let translateX = progress * maxTranslateX;
+
+      if (translateX < 0) translateX = 0;
+      if (translateX > maxTranslateX) translateX = maxTranslateX;
+
+      track.style.transform = `translateX(-${translateX}px)`;
+    }
+  });
+</script>
+  
+<!-- Яндекс карты как по кайфу -->
 <script src="https://api-maps.yandex.ru/2.1/?apikey=93470f69-5044-43d2-b2fa-9c60fd1306a5&lang=ru_RU"></script>
 <script>
   ymaps.ready(() => {
