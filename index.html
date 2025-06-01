@@ -297,63 +297,7 @@
       font-size: 1.2rem;
     }
 
-    /* ===== Стили галереи ===== */
-    .infinite-gallery {
-      overflow: hidden;
-      width: 100vw;
-    }
-
-    .scrolling-strip {
-      display: flex;
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 30px;
-    }
-
-    .scrolling-content {
-      display: flex;
-      animation: scroll-left 30s linear infinite;
-    }
-
-    .scrolling-strip.reverse .scrolling-content {
-      animation: scroll-right 30s linear infinite;
-    }
-
-    .scrolling-content img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      margin-right: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    @keyframes scroll-right {
-      0% {
-        transform: translateX(-50%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-  /* Для плавности на мобильных */
-    @media (max-width: 768px) {
-      .scrolling-content img {
-        width: 180px;
-        height: 180px;
-      }
-    }
-   /* ===== Footer ===== */
+    /* ===== Footer ===== */
     footer {
       padding: 100px 0;
     }
@@ -546,43 +490,7 @@
   </div>
 </section>
   
-<!-- Галерея -->
-<section id="gallery" style="padding: 60px 0; background: #f9f4ef;">
-  <h2 style="text-align: center; margin-bottom: 40px;">Галерея</h2>
-
-  <!-- Обёртка для двух каруселей -->
-  <div class="infinite-gallery">
-    <!-- Первая лента -->
-    <div class="scrolling-strip">
-      <div class="scrolling-content">
-        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
-        <!-- Повторяем те же картинки -->
-        <img src="https://i.pinimg.com/736x/30/48/7d/30487da2d05ad7ba9f70f14033ac3326.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/f0/38/b8/f038b8250866cea10526c49c7e1d94c7.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/2e/41/c3/2e41c3a46c0d0d900046478d77283f22.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
-      </div>
-    </div>
-
-    <!-- Вторая лента -->
-    <div class="scrolling-strip reverse">
-      <div class="scrolling-content">
-        <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
-        <!-- Повтор -->
-        <img src="https://i.pinimg.com/736x/cf/20/fd/cf20fd9b8322ae9e2c4f09e30d9bffa4.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/55/c2/7f/55c27f239ecd4c4c31b5126772582cf5.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/37/29/9c/37299c0941798b93b0345c0be729c924.jpg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+<div class="divider"></div>
   
 <section class="section bg-beige text-center">
   <div class="container" data-aos="zoom-out-down">
