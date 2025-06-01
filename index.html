@@ -1011,7 +1011,7 @@
     const successModal = new bootstrap.Modal(document.getElementById('successModal'));
     
     document.querySelectorAll('.btn-custom').forEach(button => {
-      if (!button.closest('.modal') && button.textContent.match(/(Записаться|Приобрести)/)) {
+      if (!button.closest('.modal') && button.textContent.match(/(Записаться|Приобрести|Узнать больше)/)) {
         button.addEventListener('click', function(e) {
           e.preventDefault();
           bookingModal.show();
