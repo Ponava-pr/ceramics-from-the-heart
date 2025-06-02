@@ -11,7 +11,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* ===== Global Variables & Base Styles ===== */
+    /* ===== Глобальные переменные и базовые стили ===== */
     :root {
       --beige: #F5E9DC;
       --dark-beige: #E8D9C5;
@@ -35,7 +35,7 @@
       color: var(--text-dark);
     }
 
-    /* ===== Utility Classes ===== */
+    /* ===== Вставки ===== */
     .bg-beige {
       background-color: var(--beige);
     }
@@ -66,7 +66,7 @@
       padding: 40px 0 !important; 
     }
     
-    /* ===== Header & Navigation ===== */
+    /* ===== Заголовок и навигация ===== */
     nav {
       background-color: var(--beige);
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
@@ -91,7 +91,7 @@
       color: var(--burgundy) !important;
     }
 
-    /* ===== Hero Section ===== */
+    /* ===== Главный раздел ===== */
     .hero-section {
       position: relative;
       min-height: 50vh;
@@ -116,7 +116,7 @@
       margin-bottom: 3rem;
     }
 
-    /* ===== Quote Parallax ===== */
+    /* ===== Параллакс ===== */
     .quote-parallax {
       min-height: 200px;
       background-position: center;
@@ -157,7 +157,7 @@
       margin-bottom: 20px;
     }
 
-    /* ===== Sections ===== */
+    /* ===== Секции ===== */
     .section {
       padding: 100px 0;
       position: relative;
@@ -167,7 +167,7 @@
       min-height: 700px; 
     }
 
-        /* Общий стиль заголовка */
+    /* ===== Общий стиль заголовка ===== */
     .section-title {
       font-size: 3rem;
       text-align: center;
@@ -177,7 +177,7 @@
       letter-spacing: 2px;
     }
 
-    /* ===== Cards ===== */
+    /* ===== Карты ===== */
     .card {
       border: none;
       border-radius: 12px;
@@ -212,7 +212,7 @@
       color: var(--text-medium);
     }
 
-    /* ===== Buttons ===== */
+    /* ===== Кнопки ===== */
     .btn-custom {
       background-color: var(--burgundy);
       color: white;
@@ -229,7 +229,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* ===== Parallax Section ===== */
+    /* ===== Cекция с параллаксом ===== */
     .parallax-section {
       height: 500px;
       background: url('https://i.pinimg.com/736x/7f/6d/25/7f6d25eae1bd8c3f0fe4b26196be2c03.jpg') no-repeat center center fixed;
@@ -258,7 +258,83 @@
       color: white;
     }
 
-    /* ===== Certificate Section ===== */
+        /* ===== Галерея ===== */
+    .gallery-section {
+      padding: 4rem 2rem;
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .gallery-scroll-wrapper {
+      width: 100%;
+      height: 250px; 
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-scroll-track {
+      display: flex;
+      gap: 1.5rem;
+      position: absolute;
+      will-change: transform;
+    }
+
+    .gallery-scroll-track img {
+      width: 225px;
+      height: 225px;
+      object-fit: cover;
+      border-radius: 12px;
+      user-select: none;
+      pointer-events: none; 
+    }
+    #gallery {
+      scroll-margin-top: 200px;
+      padding-top: 100px; /* Пространство сверху, удали если некрасиво */
+    }
+    
+    /* ===== Галерея на телефоне ===== */
+    .gallery-mobile-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      padding-bottom: 1rem;
+      width: 100%;
+    }
+
+    /* ===== Скрытие скр.бара ===== */
+    .gallery-mobile-container::-webkit-scrollbar {
+      display: none;
+    }
+    .gallery-mobile-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .gallery-mobile-track {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .gallery-mobile-track img {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-right: 1rem;
+      vertical-align: top;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-mobile-track img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* ===== Сертификаты ===== */
     .certificate-section {
       position: relative;
       background: url('https://i.pinimg.com/736x/6f/aa/4c/6faa4c19adead2aea10051531c21e5c5.jpg') center/cover no-repeat;
@@ -290,7 +366,7 @@
       justify-content: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border: 2px solid var(--text-dark);
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* для анимации возможно не сработает */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
     }
     
     .certificate-box:hover {
@@ -305,7 +381,7 @@
       border-radius: 12px;
     }
 
-    /* ===== Map Section ===== */
+    /* ===== Секция с картой ===== */
     .map-section {
       padding: 100px 0;
     }
@@ -329,83 +405,7 @@
       font-size: 1.2rem;
     }
     
-    /* ===== Gallery ===== */
-    .gallery-section {
-      padding: 4rem 2rem;
-      background-color: #fff;
-      position: relative;
-      overflow: hidden;
-      min-height: 500px;
-    }
-
-    .gallery-scroll-wrapper {
-      width: 100%;
-      height: 250px; /* Высота ленты */
-      overflow: hidden;
-      position: relative;
-    }
-
-    .gallery-scroll-track {
-      display: flex;
-      gap: 1.5rem;
-      position: absolute;
-      will-change: transform;
-    }
-
-    .gallery-scroll-track img {
-      width: 225px;
-      height: 225px;
-      object-fit: cover;
-      border-radius: 12px;
-      user-select: none;
-      pointer-events: none; 
-    }
-    #gallery {
-      scroll-margin-top: 200px;
-      padding-top: 100px; /* Пространство сверху, удали если некрасиво */
-    }
-    
-    /* ===== Gallery mob ===== */
-    .gallery-mobile-container {
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-      padding-bottom: 1rem;
-      width: 100%;
-    }
-
-    /* Скрываем скроллбар */
-    .gallery-mobile-container::-webkit-scrollbar {
-      display: none;
-    }
-    .gallery-mobile-container {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .gallery-mobile-track {
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .gallery-mobile-track img {
-      display: inline-block;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-right: 1rem;
-      vertical-align: top;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-mobile-track img:hover {
-      transform: scale(1.05);
-    }
-
-   /* ===== Footer ===== */
+   /* ===== Футер ===== */
     footer {
       padding: 80px 0 60px;
       background-color: var(--dark-beige);
@@ -561,7 +561,7 @@
       font-size: 0.9rem;
     }
 
-    /* ===== Media Queries ===== */
+    /* ===== Медиа ===== */
     @media (min-width: 769px) {
       .quote-parallax {
         height: 45vh;
@@ -601,7 +601,7 @@
       }
     }
     
-  /* ===== Feedback ===== */
+  /* ===== Обратная связь ===== */
   .modal-content {
     border-radius: 15px;
     overflow: hidden;
@@ -646,7 +646,8 @@
   </style>
 </head>
 <body>
-
+  
+<!-- Навигация -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand" href="#">Potty.</a>
@@ -663,14 +664,16 @@
     </div>
   </div>
 </nav>
-
+  
+<!-- Бренд -->
 <section class="hero-section bg-beige">
   <div class="hero-content">
     <h1 class="main-title" data-aos="fade-down">Potty.</h1>
     <p class="main-subtitle" data-aos="fade-up" data-aos-delay="200">Гончарная мастерская с душой</p>
   </div>
 </section>
-
+  
+<!-- Секция с цитатой -->
 <div class="quote-parallax">
   <div class="quote-parallax-overlay"></div>
   <div class="quote-content">
@@ -680,6 +683,7 @@
     </div>
   </div>
 </div>
+  
 <!-- Раздел "о нас" -->
 <section id="about" class="section bg-beige">
   <div class="container">
@@ -791,10 +795,11 @@
     </div>
   </div>
 </section>
-  
+
+<!-- Раздел галереи -->
 <section id="gallery" class="gallery-section">
   <h2 class="section-title">Работы наших учеников</h2>
-  <!-- Для мобильной галереи -->
+  <!-- Галерея для мобильной версии -->
   <div class="gallery-mobile-container d-block d-md-none">
     <div class="gallery-mobile-track">
       <img src="https://i.pinimg.com/736x/a5/94/4e/a5944e7829896990ff76a9202801b255.jpg" alt="Фото 1" />
@@ -813,7 +818,7 @@
       <img src="https://i.pinimg.com/736x/d2/78/91/d2789148e68c808a55187d42c10c7975.jpg" alt="Фото 14" />
     </div>
   </div>
-  <!-- Оставляем текущую галерею только для десктопа -->
+  <!-- Галерея только для десктопа -->
   <div class="gallery-scroll-wrapper d-none d-md-block">
     <div class="gallery-scroll-track">
       <img src="https://i.pinimg.com/736x/a5/94/4e/a5944e7829896990ff76a9202801b255.jpg" alt="Фото 1" />
@@ -839,7 +844,8 @@
     <h2 class="section-title" data-aos="fade-up">Подари незабываемые эмоции</h2>
   </div>
 </section>
-
+  
+<!-- Раздел сертификатов -->
 <section class="certificate-section">
   <div class="container">
     <div class="row justify-content-center g-4">
@@ -859,7 +865,8 @@
     </div>
   </div>
 </section>
-
+  
+<!-- Раздел с картой -->
 <section class="map-section bg-beige">
   <div class="container">
     <h2 class="section-title">Как нас найти?</h2>
@@ -986,7 +993,7 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    once: false, // Не забудь, анимация всегда
+    once: false, // тут
     duration: 800
   });
 </script>
@@ -1017,7 +1024,7 @@
     const gallerySection = document.querySelector("#gallery");
     if (!track || !gallerySection) return;
 
-  // Оригинальный код анимации для десктопа
+  // Код анимации для десктопа
     const viewportHeight = window.innerHeight;
     const scrollY = window.scrollY;
     const sectionTop = gallerySection.offsetTop;
@@ -1059,7 +1066,7 @@
   });
 </script>
   
-<!-- Обратная связь для бедняг -->
+<!-- Обратная связь -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
